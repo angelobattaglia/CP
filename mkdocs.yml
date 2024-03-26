@@ -1,0 +1,17 @@
+site_name: CP Starting guide
+theme:
+  # Setting up the logo and the favicon
+  favicon: images/favicon.png
+  logo: images/logo.png
+  # name of the extension material for mkdocs
+  name: material
+  # features, more on these if you visit the "Contribute" page
+  features:
+    - content.code.copy
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.indexes
+    - navigation.sections
+    - navigation.path
+  palette:
+    primary: deep purple

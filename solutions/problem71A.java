@@ -3,7 +3,7 @@ import java.util.Scanner;
 	From:
  	https://codeforces.com/problemset/problem/71/A
 	*/
-public class WTLW71A {
+public class problem71A {
 
 	public static void main(String[] args) {
 		

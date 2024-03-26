@@ -1,4 +1,8 @@
-# Best resources
+---
+title: Starting point
+---
+
+# Starting out
 
 - [e-maxx.ru](http://e-maxx.ru/index.php)
 - [cp-algorithms](https://github.com/cp-algorithms/cp-algorithms)

@@ -1,0 +1,866 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../matrices/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.14">
+    
+    
+      
+        <title>The #include<bits/stdc++.h> library - CP Starting guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.fad675c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-includebitsstdch-library" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="CP Starting guide" class="md-header__button md-logo" aria-label="CP Starting guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CP Starting guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The #include&lt;bits/stdc++.h&gt; library
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="CP Starting guide" class="md-nav__button md-logo" aria-label="CP Starting guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    CP Starting guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    The #include&lt;bits/stdc++.h&gt; library
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    The #include&lt;bits/stdc++.h&gt; library
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-little-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      .. a little note ..
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initializing-a-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initializing a data structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cycling-through-a-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cycling through a data structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cycling through a data structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basics-of-stdtie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basics of std::tie
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unpacking-a-tuple-with-stdtie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unpacking a Tuple with std::tie
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-uses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical Uses
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passing-this-data-structure-to-a-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passing this data structure to a function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Passing this data structure to a function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#by-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      By Reference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#by-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      By Value
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stdsort" class="md-nav__link">
+    <span class="md-ellipsis">
+      std::sort
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-implement-your-own-sorting-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Implement Your Own Sorting Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../matrices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Matrices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../starter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Starting point
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../strings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Strings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-little-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      .. a little note ..
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initializing-a-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initializing a data structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cycling-through-a-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cycling through a data structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cycling through a data structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basics-of-stdtie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basics of std::tie
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unpacking-a-tuple-with-stdtie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unpacking a Tuple with std::tie
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-uses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical Uses
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passing-this-data-structure-to-a-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passing this data structure to a function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Passing this data structure to a function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#by-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      By Reference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#by-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      By Value
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stdsort" class="md-nav__link">
+    <span class="md-ellipsis">
+      std::sort
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-implement-your-own-sorting-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Implement Your Own Sorting Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="the-includebitsstdch-library">The <code>#include&lt;bits/stdc++.h&gt;</code> library</h1>
+<p>. Basic Data Structures with bits/stdc++: initializing them, filling them and searching in them</p>
+<p>Example using vector&lt;&gt; of tuples&lt;&gt; and giving it a name and a size and filling it with datas from the stdIO</p>
+<h4 id="a-little-note">.. a little note ..</h4>
+<p>Use of <code>#include&lt;bits/stdc++.h&gt;</code>: This header is convenient but not standard C++. It's widely used in competitive programming for efficiency but might not be portable or optimal for production environments. For broader compatibility, consider including only the specific headers you need (e.g., <code>&lt;iostream&gt;</code>, <code>&lt;vector&gt;</code>, <code>&lt;tuple&gt;</code>).</p>
+<h2 id="initializing-a-data-structure">Initializing a data structure</h2>
+<pre><code class="language-c++">    // Inserting the n from standard input
+    cin &gt;&gt; n;
+
+    // Vector to store tuples, each containing three integers
+    vector&lt;tuple&lt;int, int, int&gt;&gt; problems(n);
+
+    for(int i = 0; i &lt; n; ++i) {
+        int a, b, c;
+        cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;  // Read the three numbers
+        problems[i] = make_tuple(a, b, c);  // Store them in the vector as a tuple
+    }
+</code></pre>
+<ul>
+<li>
+<p>The line vector<tuple\<int, int, int>> problems(n); in C++ declares a vector that stores elements of type tuple<int, int, int>. Let's break it down for clarity:</p>
+</li>
+<li>
+<p>vector&lt;&gt;: This part declares a variable as a vector. Vectors are part of the C++ Standard Template Library (STL) and are dynamic arrays that can grow or shrink in size.</p>
+</li>
+<li>
+<p><tuple\<int, int, int>>: This specifies the type of elements that the vector will store. In this case, it's a tuple containing three int elements. A tuple is a fixed-size collection of heterogeneous values. Here, the tuple is used to store three integers, which can represent any three related values you need (like the solutions from three participants in your problem).</p>
+</li>
+<li>
+<p>problems(n): This initializes the vector named problems with n elements. Each element of the vector is a tuple initialized with default values. Since the tuple contains integers, each integer in the tuple will be initialized to zero. The value n is the number of problems (or tuples) you intend to store, which was read from the input just before.</p>
+</li>
+</ul>
+<h2 id="cycling-through-a-data-structure">Cycling through a data structure</h2>
+<p>Unpacking the elements of a tuple into separate values with <code>std::tie</code>.
+The <code>std::tie</code> function in C++ is a utility that creates a tuple of lvalue references to its arguments. It's commonly used to unpack the elements of a tuple into separate variables. Here's a detailed explanation of how <code>std::tie</code> works and how it's used for unpacking tuples:</p>
+<h3 id="basics-of-stdtie">Basics of <code>std::tie</code></h3>
+<ul>
+<li><strong>Syntax</strong>: <code>auto tie_var = std::tie(var1, var2, var3, ...);</code></li>
+<li><strong>Purpose</strong>: <code>std::tie</code> is used to create a tuple of references to variables passed to it. This is particularly useful for unpacking the values from another tuple or for tieing multiple variables together for comparison or assignment purposes.</li>
+</ul>
+<h3 id="unpacking-a-tuple-with-stdtie">Unpacking a Tuple with <code>std::tie</code></h3>
+<p>When you have a tuple, say <code>std::tuple&lt;int, int, int&gt; myTuple</code>, containing three integers, you can unpack the values stored in <code>myTuple</code> into separate variables <code>a</code>, <code>b</code>, and <code>c</code> like this:</p>
+<pre><code class="language-cpp">int a, b, c;
+std::tie(a, b, c) = myTuple;
+</code></pre>
+<p>Here's what happens in this process:</p>
+<ol>
+<li>
+<p><strong>Creating References</strong>: <code>std::tie(a, b, c)</code> creates a temporary tuple of references to <code>a</code>, <code>b</code>, and <code>c</code>. These references are essentially aliases to the original variables <code>a</code>, <code>b</code>, and <code>c</code>.</p>
+</li>
+<li>
+<p><strong>Assignment</strong>: The <code>operator=</code> of the tuple is then called to assign the values from <code>myTuple</code> to the temporary tuple created by <code>std::tie</code>. This operation assigns each element of <code>myTuple</code> to the corresponding reference in the temporary tuple, effectively unpacking the values into <code>a</code>, <code>b</code>, and <code>c</code>.</p>
+</li>
+<li>
+<p><strong>Result</strong>: After the assignment, <code>a</code>, <code>b</code>, and <code>c</code> hold the values that were stored in <code>myTuple</code>.</p>
+</li>
+</ol>
+<h3 id="practical-uses">Practical Uses</h3>
+<ul>
+<li>
+<p><strong>Unpacking</strong>: The primary use of <code>std::tie</code> is to unpack the elements of a tuple into separate variables, as shown above. This is especially handy when functions return tuples and you want to work with individual elements.</p>
+</li>
+<li>
+<p><strong>Tieing for Comparison</strong>: You can use <code>std::tie</code> to compare multiple variables in a single statement by creating a tuple of references to those variables. For example, <code>std::tie(a, b) &lt; std::tie(x, y)</code> compares <code>a</code> with <code>x</code> and <code>b</code> with <code>y</code> in lexicographical order.</p>
+</li>
+<li>
+<p><strong>Ignoring Elements</strong>: Sometimes, you might want to unpack only certain elements of a tuple and ignore others. C++17 introduced <code>std::ignore</code> for this purpose, allowing you to unpack selected elements while discarding others:</p>
+</li>
+</ul>
+<p><code>cpp
+  std::tuple&lt;int, double, char&gt; myTuple = std::make_tuple(1, 2.0, 'a');
+  int myInt;
+  char myChar;
+  std::tie(myInt, std::ignore, myChar) = myTuple;  // Unpacks 1 into myInt and 'a' into myChar, ignoring the double.</code></p>
+<h3 id="conclusion">Conclusion</h3>
+<p><code>std::tie</code> is a versatile tool in C++ for working with tuples, enabling easy unpacking of tuple elements into separate variables, facilitating comparisons, and allowing selective unpacking with the help of <code>std::ignore</code>. Its ability to create a tuple of references makes it a powerful utility for managing and manipulating grouped variables.</p>
+<p>In the context of C++ and the use of <code>std::tie</code> for unpacking tuples, the term "reference" refers to a reference type, which is one of the fundamental types in C++. A reference serves as an alias for another variable, allowing two variable names to refer to the same memory location. Here's a more detailed explanation:</p>
+<h2 id="passing-this-data-structure-to-a-function">Passing this data structure to a function</h2>
+<h3 id="by-reference">By Reference</h3>
+<h3 id="by-value">By Value</h3>
+<h2 id="strings">Strings</h2>
+<p>The string class is a part of the C++ Standard Library (included through the <code>&lt;string&gt;</code> header, which is itself included in <code>&lt;bits/stdc++.h&gt;</code>), and it provides a more complex and flexible way to work with text compared to the traditional C-style character arrays.</p>
+<p>Here is a basic example of how you might use the string class in C++:</p>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main() {
+    string x = &quot;hello&quot;;
+    cout &lt;&lt; x &lt;&lt; endl; // Output: hello
+    return 0;
+}
+</code></pre>
+<h2 id="algorithms">Algorithms</h2>
+<p>In competitive programming, the choice of sorting algorithm is often driven by efficiency and ease of implementation within the constraints of the problem. The C++ Standard Library, which is included when you use <code>#include&lt;bits/stdc++.h&gt;</code>, provides robust sorting functionalities that are highly optimized for general use cases. Specifically, the <code>std::sort</code> function is a highly efficient sorting algorithm that usually outperforms most manually implemented sorting algorithms in terms of both time and effort.</p>
+<h3 id="stdsort">std::sort</h3>
+<p>The <code>std::sort</code> function, found in the <code>&lt;algorithm&gt;</code> header (which is included in <code>&lt;bits/stdc++.h&gt;</code>), is typically a hybrid sorting algorithm. It is a combination of QuickSort, HeapSort, and InsertionSort, known as Introsort. Starting with QuickSort and switching to HeapSort when the recursion depth exceeds a level based on the number of elements being sorted, and using InsertionSort for small partitions, <code>std::sort</code> is optimized for various scenarios and generally offers excellent performance:</p>
+<ul>
+<li><strong>Best for most cases in competitive programming</strong>: Because it's highly optimized and requires only a few lines of code to implement.</li>
+<li><strong>Time Complexity</strong>: O(n log n) on average, which is sufficient for a large set of problems.</li>
+</ul>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main() {
+    vector&lt;int&gt; nums = {4, 1, 3, 9, 7};
+    sort(nums.begin(), nums.end()); // Ascending order
+
+    // For descending order:
+    // sort(nums.begin(), nums.end(), greater&lt;int&gt;());
+
+    for(int num : nums) {
+        cout &lt;&lt; num &lt;&lt; &quot; &quot;;
+    }
+    cout &lt;&lt; endl;
+
+    return 0;
+}
+</code></pre>
+<h3 id="when-to-implement-your-own-sorting-algorithm">When to Implement Your Own Sorting Algorithm</h3>
+<p>Implementing your own sorting algorithm (like QuickSort or MergeSort) is rarely necessary unless:</p>
+<ol>
+<li><strong>The problem specifically requires it</strong>: Sometimes, a problem might ask you to implement a particular sorting algorithm without using library functions.</li>
+<li><strong>Custom sorting logic that <code>std::sort</code> cannot easily handle</strong>: Even then, you can often use <code>std::sort</code> with a custom comparator.</li>
+<li><strong>Educational purposes or practicing</strong>: Implementing sorting algorithms can be a great learning exercise.</li>
+</ol>
+<h3 id="conclusion_1">Conclusion</h3>
+<p>For the vast majority of competitive programming problems, you should use <code>std::sort</code> for sorting needs due to its simplicity and efficiency. It is not reliant on the <code>&lt;bits/stdc++.h&gt;</code> module per se, but this module includes the <code>&lt;algorithm&gt;</code> header, which contains <code>std::sort</code>. The need to manually implement a sorting algorithm like QuickSort or BubbleSort is quite rare in competitive programming scenarios. Always consider the problem's constraints and requirements, but remember that standard library functions are your friends for most sorting tasks.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.cd18aaf1.min.js"></script>
+      
+    
+  </body>
+</html>

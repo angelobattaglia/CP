@@ -1,4 +1,7 @@
-# The "#include<bits/stdc++.h>"
+---
+title: CP Library
+---
+# The `#include<bits/stdc++.h>` library
 
 . Basic Data Structures with bits/stdc++: initializing them, filling them and searching in them
 

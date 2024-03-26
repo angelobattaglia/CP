@@ -1,4 +1,4 @@
-# Reference Basics
+# Reference
 
 - **Definition**: A reference in C++ is created by placing an ampersand (`&`) before a variable name during its declaration. Once a reference is initialized with a variable, it becomes an alternative name for that variable.
 

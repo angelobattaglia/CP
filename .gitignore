@@ -1,3 +1,4 @@
 *.exe
 *.out
 *.a
+# site # if you want to exclude the static website that is being generated

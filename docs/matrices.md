@@ -1,4 +1,7 @@
-# Matrices
+---
+title: Matrices
+---
+# Working with matrices
 
 Modeling a matrix in a low-level language like C++ requires a clear understanding of both the data structure you wish to represent and the memory management capabilities of the language. For a matrix, which is essentially a two-dimensional array, you have several options in C++ depending on the specifics of your application, such as fixed-size matrices, dynamically allocated matrices, and matrices using Standard Template Library (STL) containers. I'll outline a few methods here, focusing on their implementation and the trade-offs they entail.
 
