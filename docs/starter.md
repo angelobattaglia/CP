@@ -7,6 +7,7 @@ title: Starting point
 - [e-maxx.ru](http://e-maxx.ru/index.php)
 - [cp-algorithms](https://github.com/cp-algorithms/cp-algorithms)
 - [Competitive Programmer's Handbook](https://cses.fi/book/book.pdf)
+- [USACO guide](https://usaco.guide/general/intro-cp?lang=cpp)
 - [C++ reference](https://cplusplus.com/)
 
 ## Basic template for CP
