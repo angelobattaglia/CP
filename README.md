@@ -14,15 +14,15 @@ mkdocs build
 mkdocs serve
 ```
 
-# Workflow
+## Workflow
 
 On the `solutions` sub-directory I use this approach
 
-## Makefile to clean the binaries
+### Makefile to clean the binaries
 
 Simply type `make` to get rid of `.class` and `.out` files
 
-## Add this to your `.zshrc` or `.bashrc` to generate templates and run the scripts
+### Add this to your `.zshrc` or `.bashrc` to generate templates and run the scripts
 
 This will make you use two scripts that I use to be quick `gen` and `run`, and
 adjust the path appropriately
