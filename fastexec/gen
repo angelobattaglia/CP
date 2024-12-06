@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 # Generates a new file with the name provided by the first command line argument starting from the template.cpp
 
