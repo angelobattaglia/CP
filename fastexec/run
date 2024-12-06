@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# Check if the user provided a file name
+if [ -z "$1" ]; then
+    echo "Usage: $0 <filename>"
+    exit 1
+fi
+
+# Get the file name without the extension
+FILENAME="$1"
+BASENAME=$(basename "$FILENAME" .cpp)
+OUTPUT_FILE="${BASENAME}.out"
+
+# Check if the file exists
+if [ ! -f "$FILENAME" ]; then
+    echo "Error: File '$FILENAME' does not exist."
+    exit 1
+fi
+
+# Compile the C++ file
+g++ "$FILENAME" -o "$OUTPUT_FILE" -std=c++17 -Wall -Wextra
+if [ $? -ne 0 ]; then
+    echo "Compilation failed."
+    exit 1
+fi
+
+# Run the compiled file
+echo "Running '$OUTPUT_FILE':"
+./"$OUTPUT_FILE"
+

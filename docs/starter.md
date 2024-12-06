@@ -47,6 +47,8 @@ int main() {
 }
 ```
 
+```
+
 ## CLI flags for the compiler
 
 Testing Locally: It's a good practice to test your code locally with the -std=c++17 flag to ensure it's compatible with C++17 standards.

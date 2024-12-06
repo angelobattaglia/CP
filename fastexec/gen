@@ -1,0 +1,26 @@
+#! /bin/sh
+
+# Generates a new file with the name provided by the first command line argument starting from the template.cpp
+
+# Check if the user provided a file name
+if [ -z "$1" ]; then
+    echo "Usage: $0 <filename>"
+    exit 1
+fi
+
+# Define the source template file and the destination file
+TEMPLATE_FILE="template.cpp"
+NEW_FILE="$1"
+
+# Check if the template file exists
+if [ ! -f "$TEMPLATE_FILE" ]; then
+    echo "Error: Template file '$TEMPLATE_FILE' does not exist."
+    exit 1
+fi
+
+# Copy the template file to the new file
+cp "$TEMPLATE_FILE" "$NEW_FILE"
+
+# Confirm success
+echo "File '$NEW_FILE' created successfully from template '$TEMPLATE_FILE'."
+
