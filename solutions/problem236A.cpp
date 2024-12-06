@@ -17,7 +17,6 @@ int main() {
     string username;
     cin >> username;
 
-
     if (!username.empty()) {
         auto it = t.begin(); // Get iterator to the first character
         char element = *it; // Extract the first character
