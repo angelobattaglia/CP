@@ -6,5 +6,5 @@ clean:
 		*.out
 
 # Phony targets (not associated with real files)
-.PHONY: all clean cleanall
+.PHONY: all clean
 
